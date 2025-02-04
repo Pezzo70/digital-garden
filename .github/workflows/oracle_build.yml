@@ -22,8 +22,5 @@ jobs:
       - name: Run build quartz
         run: |
           ssh -o StrictHostKeyChecking=no ubuntu@168.75.93.254 << 'EOF'
-              cd /home/ubuntu/quartz && \
-              git pull && \
-              npx quartz build && \
-              exit
+              bash -c "cd /home/ubuntu/quartz && git pull && npx quartz build && exit"
           EOF
