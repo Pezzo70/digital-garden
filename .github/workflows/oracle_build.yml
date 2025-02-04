@@ -21,7 +21,7 @@ jobs:
 
       - name: Run build quartz
         run: |
-          ssh -o StrictHostKeyChecking=no ubuntu@168.75.92.254 << 'EOF'
+          ssh -o StrictHostKeyChecking=no ubuntu@168.75.93.254 << 'EOF'
             cd /quartz
             git pull
             npx quartz build
