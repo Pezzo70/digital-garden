@@ -1,9 +1,9 @@
-name: Build and Deploy
+name: oracle_build
 
 on:
   push:
     branches:
-      - my-digital-garden  
+      - v4 
 
 jobs:
   deploy:
