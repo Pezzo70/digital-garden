@@ -5,11 +5,26 @@ import * as Component from "./quartz/components"
 export const sharedPageComponents: SharedLayout = {
   head: Component.Head(),
   header: [],
-  afterBody: [],
+  afterBody: [
+    Component.MobileOnly(Component.Graph()),
+    Component.Comments({
+      provider: 'giscus',
+      options: {
+        repo: 'Pezzo70/digital-garden',
+        repoId: 'R_kgDONzxXWA',
+        category: 'Announcements',
+        categoryId: 'DIC_kwDONzxXWM4CmuD3',
+        themeUrl: "https://www.gabrielpezzo.dev/static/giscus",
+        darkTheme: "dark",
+        lightTheme: "light"
+      }
+    }),
+  ],
   footer: Component.Footer({
     links: {
-      GitHub: "https://github.com/jackyzha0/quartz",
+      GitHub: "https://github.com/Pezzo70",
       "Discord Community": "https://discord.gg/cRFFHYye7t",
+      "LinkedIn": "https://linkedin.com/in/gabriel-pezzo-501694222"
     },
   }),
 }
@@ -17,28 +32,31 @@ export const sharedPageComponents: SharedLayout = {
 // components for pages that display a single page (e.g. a single note)
 export const defaultContentPageLayout: PageLayout = {
   beforeBody: [
-    Component.Breadcrumbs(),
     Component.ArticleTitle(),
     Component.ContentMeta(),
     Component.TagList(),
+    Component.Darkmode()
   ],
   left: [
+    Component.DesktopOnly(Component.Breadcrumbs()),
     Component.PageTitle(),
     Component.MobileOnly(Component.Spacer()),
     Component.Search(),
-    Component.Darkmode(),
     Component.Explorer(),
   ],
   right: [
-    Component.Graph(),
+    Component.DesktopOnly(Component.Graph()),
     Component.DesktopOnly(Component.TableOfContents()),
-    Component.Backlinks(),
+    Component.Backlinks()
   ],
 }
 
 // components for pages that display lists of pages  (e.g. tags or folders)
 export const defaultListPageLayout: PageLayout = {
-  beforeBody: [Component.Breadcrumbs(), Component.ArticleTitle(), Component.ContentMeta()],
+  beforeBody: [
+    Component.DesktopOnly(Component.Breadcrumbs()),
+     Component.ArticleTitle(),
+      Component.ContentMeta()],
   left: [
     Component.PageTitle(),
     Component.MobileOnly(Component.Spacer()),
