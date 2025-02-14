@@ -32,13 +32,13 @@ export const sharedPageComponents: SharedLayout = {
 // components for pages that display a single page (e.g. a single note)
 export const defaultContentPageLayout: PageLayout = {
   beforeBody: [
+    Component.Breadcrumbs(),
     Component.ArticleTitle(),
     Component.ContentMeta(),
     Component.TagList(),
     Component.Darkmode()
   ],
   left: [
-    Component.DesktopOnly(Component.Breadcrumbs()),
     Component.PageTitle(),
     Component.MobileOnly(Component.Spacer()),
     Component.Search(),
@@ -54,7 +54,7 @@ export const defaultContentPageLayout: PageLayout = {
 // components for pages that display lists of pages  (e.g. tags or folders)
 export const defaultListPageLayout: PageLayout = {
   beforeBody: [
-    Component.DesktopOnly(Component.Breadcrumbs()),
+    Component.Breadcrumbs(),
      Component.ArticleTitle(),
       Component.ContentMeta()],
   left: [
