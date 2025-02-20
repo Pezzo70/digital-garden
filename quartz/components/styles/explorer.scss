@@ -16,7 +16,7 @@
     .sidebar.left:has(.explorer) {
       box-sizing: border-box;
       position: sticky;
-      background-color: var(--light);
+      background-color: #141a1f;
     }
 
     // Hide Explorer on mobile until done loading.
@@ -247,7 +247,6 @@ li:has(> .folder-outer:not(.open)) > .folder-container > svg {
       z-index: 100;
       position: absolute;
       top: 0;
-      background-color: var(--light);
       max-width: 100dvw;
       left: -100dvw;
       width: 100%;
