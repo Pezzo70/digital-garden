@@ -2,6 +2,7 @@
 title: Trie and Text Pattern Search
 tags:
   - DSA
+  - note
 ---
 An R-way Trie is a tree-like data structure, also known as a Prefix Tree or, more generically, a Digital Search Tree (DST)/Digital Tree. It is commonly used to implement string-based [[table symbol]] structures. 
 It has a certain ressemblance to a [[binary tree]], it contains [[trie#Implementation]]

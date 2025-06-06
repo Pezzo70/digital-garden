@@ -13,7 +13,8 @@ const config: QuartzConfig = {
     enableSPA: true,
     enablePopovers: true,
     analytics: {
-      provider: "plausible",
+      provider: "goatcounter",
+      websiteId: "quartz-pezzo",
     },
     locale: "en-US",
     baseUrl: "gabrielpezzo.dev",

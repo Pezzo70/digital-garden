@@ -23,9 +23,8 @@ export const sharedPageComponents: SharedLayout = {
   footer: Component.Footer({
     links: {
       GitHub: "https://github.com/Pezzo70",
-      "Discord Community": "https://discord.gg/cRFFHYye7t",
       "LinkedIn": "https://linkedin.com/in/gabriel-pezzo-501694222"
-    },
+    }
   }),
 }
 
@@ -35,14 +34,15 @@ export const defaultContentPageLayout: PageLayout = {
     Component.Breadcrumbs(),
     Component.ArticleTitle(),
     Component.ContentMeta(),
-    Component.TagList(),
-    Component.Darkmode()
+    Component.TagList(),    
   ],
   left: [
     Component.PageTitle(),
     Component.MobileOnly(Component.Spacer()),
-    Component.Search(),
+    Component.Search(),  
     Component.Explorer(),
+    Component.DesktopOnly(Component.RecentNotes()),
+
   ],
   right: [
     Component.DesktopOnly(Component.Graph()),
@@ -61,7 +61,7 @@ export const defaultListPageLayout: PageLayout = {
     Component.PageTitle(),
     Component.MobileOnly(Component.Spacer()),
     Component.Search(),
-    Component.Darkmode(),
+    Component.MobileOnly(Component.Darkmode()),
     Component.Explorer(),
   ],
   right: [],
