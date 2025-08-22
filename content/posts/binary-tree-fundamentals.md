@@ -2,6 +2,7 @@
 title: "Binary Tree Fundamentals: A Complete Guide with C# Implementation"
 date: 2025-08-20
 tags:
+  - post
   - DSA
   - data-structures
   - algorithms

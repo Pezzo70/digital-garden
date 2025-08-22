@@ -2,6 +2,7 @@
 title: "Understanding Digital Gardens: A Modern Approach to Knowledge Management"
 date: 2025-08-20
 tags:
+  - post
   - concept
   - knowledge-management
   - digital-garden

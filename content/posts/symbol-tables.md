@@ -2,6 +2,7 @@
 title: "Symbol Tables: Complete Implementation Guide in C#"
 date: 2025-08-20
 tags:
+  - post
   - DSA
   - data-structures
   - algorithms

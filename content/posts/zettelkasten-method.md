@@ -2,10 +2,10 @@
 title: "The Zettelkasten Method: Building a Second Brain with Smart Notes"
 date: 2025-08-20
 tags:
+  - post
   - concept
   - productivity
-  - note-taking
-  - zettelkasten
+[[2025-08-22]]
 description: "Discover the Zettelkasten method, a powerful note-taking system that helps you build a connected knowledge network and enhance your learning."
 draft: false
 ---
