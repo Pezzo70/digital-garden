@@ -23,7 +23,7 @@ Quick references, learning materials, and work-in-progress thoughts. These are m
 - **GitHub**: [Pezzo70](https://github.com/Pezzo70/)
 
 ### 🔗 My Linktree
-Check out my [Linktree](/my-linktree) for all my social links and projects in one place.
+Check out my [Linktree](https://www.gabrielpezzo.dev/my-linktree) for all my social links and projects in one place.
 
 ## Recent Content
 
