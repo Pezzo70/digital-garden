@@ -11,6 +11,11 @@ const isElement = (target: EventTarget | null): target is Element =>
 const isLocalUrl = (href: string) => {
   try {
     const url = new URL(href)
+    
+    if (url.pathname.startsWith("/my-linktree")) {
+      return false
+    }
+
     if (window.location.origin === url.origin) {
       return true
     }
