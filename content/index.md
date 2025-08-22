@@ -30,11 +30,9 @@ Check out my [Linktree](/my-linktree) for all my social links and projects in on
 ### Latest Posts
 - [[digital-garden]] - Understanding Digital Gardens
 - [[zettelkasten-method]] - The Zettelkasten Method
-
-### Recent Notes
-- [[trie-data-structure]] - Trie data structure implementation
-- [[binary-tree-fundamentals]] - Binary tree concepts and operations
-- [[symbol-tables]] - Symbol table implementations
+- [[trie-data-structure]] - Trie Data Structure with C# Implementation
+- [[binary-tree-fundamentals]] - Binary Tree Fundamentals with C# Implementation
+- [[symbol-tables]] - Symbol Tables Complete Guide in C#
 
 ---
 
