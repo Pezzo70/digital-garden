@@ -1,3 +1,33 @@
 @use "./base.scss";
 @use "./themes";
 // put your custom CSS here!
+
+// Force dark mode - override any theme settings
+html {
+  --light: #161618 !important;
+  --lightgray: #393639 !important;
+  --gray: #646464 !important;
+  --darkgray: #d4d4d4 !important;
+  --dark: #ebebec !important;
+  --secondary: #7b97aa !important;
+  --tertiary: #84a59d !important;
+  --highlight: rgba(143, 159, 169, 0.15) !important;
+  --textHighlight: #b3aa0288 !important;
+  
+  // Force dark background and text colors
+  background-color: var(--light) !important;
+  color: var(--dark) !important;
+}
+
+// Override any light mode styles
+html[saved-theme="light"] {
+  --light: #161618 !important;
+  --lightgray: #393639 !important;
+  --gray: #646464 !important;
+  --darkgray: #d4d4d4 !important;
+  --dark: #ebebec !important;
+  --secondary: #7b97aa !important;
+  --tertiary: #84a59d !important;
+  --highlight: rgba(143, 159, 169, 0.15) !important;
+  --textHighlight: #b3aa0288 !important;
+}
