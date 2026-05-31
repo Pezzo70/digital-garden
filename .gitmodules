@@ -1,0 +1,3 @@
+[submodule "public-notes"]
+	path = content
+	url = https://github.com/Pezzo70/public-notes.git
