@@ -1,0 +1,23 @@
+name: Submodule Update
+
+on:
+  push:
+    branches:
+      - v4
+    paths:
+      - content
+  workflow_dispatch:
+
+jobs:
+  submodule-update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+
+      - name: Report submodule state
+        run: |
+          echo "Submodule pointer updated on $GITHUB_SHA"
+          git submodule status
