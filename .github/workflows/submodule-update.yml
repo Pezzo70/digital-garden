@@ -1,6 +1,8 @@
 name: Submodule Update
 
 on:
+  schedule:
+    - cron: "*/15 * * * *"
   push:
     branches:
       - v4
@@ -11,13 +13,27 @@ on:
 jobs:
   submodule-update:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
         with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
           submodules: recursive
 
-      - name: Report submodule state
+      - name: Update content submodule
         run: |
-          echo "Submodule pointer updated on $GITHUB_SHA"
-          git submodule status
+          git submodule update --remote --merge content
+          if [ -n "$(git status --porcelain content)" ]; then
+            git add content
+            git commit -m "Update content submodule"
+            git push origin HEAD:v4
+          else
+            echo "No submodule update available"
+          fi
+
+      - name: Build Quartz
+        run: |
+          npx quartz build
