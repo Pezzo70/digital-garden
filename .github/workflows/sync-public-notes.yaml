@@ -1,0 +1,52 @@
+name: Sync Public Notes
+
+on:
+  repository_dispatch:
+    types:
+      - content-updated
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sync-public-notes
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout digital garden
+        uses: actions/checkout@v5
+        with:
+          ref: v5
+          fetch-depth: 0
+
+      - name: Checkout public notes
+        uses: actions/checkout@v5
+        with:
+          repository: Pezzo70/public-notes
+          ref: ${{ github.event.client_payload.branch || 'main' }}
+          path: public-notes-source
+
+      - name: Sync content
+        run: |
+          rsync -a --delete \
+            --exclude '.git/' \
+            public-notes-source/ content/
+
+      - name: Commit updated content
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          if [ -z "$(git status --porcelain content)" ]; then
+            echo "No content changes to commit"
+            exit 0
+          fi
+
+          public_notes_message="$(git -C public-notes-source log -1 --pretty=%s)"
+          git add content
+          git commit -m "Sync public notes: ${public_notes_message}"
+          git push origin HEAD:v5
