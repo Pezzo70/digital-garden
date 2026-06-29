@@ -18,13 +18,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout digital garden
-        uses: actions/checkout@v5
+        uses: actions/checkout@v7
         with:
           ref: v5
           fetch-depth: 0
 
       - name: Checkout public notes
-        uses: actions/checkout@v5
+        uses: actions/checkout@v7
         with:
           repository: Pezzo70/public-notes
           ref: ${{ github.event.client_payload.branch || 'main' }}
