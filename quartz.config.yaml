@@ -7,7 +7,7 @@ configuration:
   analytics:
     provider: plausible
   locale: en-US
-  baseUrl: Pezzo70.github.io/digital-garden
+  baseUrl: gabrielpezzo.dev
   ignorePatterns:
     - private
     - templates
