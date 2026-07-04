@@ -4,6 +4,13 @@ on:
   push:
     branches:
       - v5
+  workflow_run:
+    workflows:
+      - Sync Public Notes
+    types:
+      - completed
+    branches:
+      - v5
   workflow_dispatch:
 
 permissions:
@@ -17,6 +24,7 @@ concurrency:
 
 jobs:
   build:
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
