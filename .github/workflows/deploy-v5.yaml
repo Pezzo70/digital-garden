@@ -58,3 +58,30 @@ jobs:
     steps:
       - id: deployment
         uses: actions/deploy-pages@v5
+        continue-on-error: true
+
+      - name: Wait before retry 2
+        if: steps.deployment.outcome != 'success'
+        run: sleep 10
+
+      - id: deployment_retry_2
+        if: steps.deployment.outcome != 'success'
+        uses: actions/deploy-pages@v5
+        continue-on-error: true
+
+      - name: Wait before retry 3
+        if: steps.deployment.outcome != 'success' && steps.deployment_retry_2.outcome != 'success'
+        run: sleep 20
+
+      - id: deployment_retry_3
+        if: steps.deployment.outcome != 'success' && steps.deployment_retry_2.outcome != 'success'
+        uses: actions/deploy-pages@v5
+        continue-on-error: true
+
+      - name: Fail if all deploy attempts failed
+        if: always()
+        run: |
+          if [ "${{ steps.deployment.outcome }}" = "success" ] || [ "${{ steps.deployment_retry_2.outcome }}" = "success" ] || [ "${{ steps.deployment_retry_3.outcome }}" = "success" ]; then
+            exit 0
+          fi
+          exit 1
