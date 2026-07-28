@@ -52,3 +52,11 @@ Triangulo de pascal é simples de mostrar, já que tirando o topo do triângulo 
 representação do triângulo de pascal:
 
 ![[triangulo-de-pascal.jpg]]
+
+### 2026-07-28 14:51
+
+O triângulo de pascal é útil para quando queremos saber de quantos grupos/combinações de x objetos eu consigo fazer dentro de uma coleção de n objetosdl distintos. Isso se a ordem não importar.
+
+por exemplo, se quisermos saber quantos grupos eu consigo formar de 2 pessoas entre 8 pessoas eu vou na linha 8 e na posição 2, ou melhor C(8,2) = 28.
+
+lembrando que tanto a linha quanto a posição é indexada a 0. então existe a posição C(0,0)
